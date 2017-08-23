@@ -138,7 +138,7 @@ if __name__ == '__main__':
         time.sleep(4)
         print "\033[1m[--] Started sniffing"
         time.sleep(4)
-        print colored("\033[1m[--] Packets are being analysis", "green")
+        print colored("\033[1m[--] Packets are being analysed", "green")
         sniff_channel_hop(iface)
         print "\033[1m[--] Total network: ", len(info_list)
         time.sleep(2)
