@@ -33,7 +33,7 @@ banner_dos = """
      |___/ \___/\____/  \_| |_/\__|\__\__,_|\___|_|\_\
 
 
-         Sents deauthentication attack to TARGET(s)
+         Sends deauthentication attack to TARGET(s)
 """
 
 DESCRIPTION = """
